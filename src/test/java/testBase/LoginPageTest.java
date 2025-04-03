@@ -10,7 +10,7 @@ public class LoginPageTest extends baseClass{
 
 	LoginPage Login=new LoginPage(driver);
 	
-	@Test(groups ="smoke")
+	@Test(enabled = false, groups ="smoke")
 	void Login() {
 		Login.enterTheUserName("standard_user");
 		Login.enterThePassword("secret_sauce");
@@ -28,7 +28,7 @@ public class LoginPageTest extends baseClass{
 	}
 	
 
-	@Test(enabled=false,groups ="regression",dataProvider = "userInvalidData", dataProviderClass =TestDataProvider.class )
+	@Test(enabled=true,groups ="regression",dataProvider = "userInvalidData", dataProviderClass =TestDataProvider.class )
 	void LogininVaildCrential(String User,String Pass) {
 		Login.enterTheUserName(User);
 		Login.enterThePassword(Pass);

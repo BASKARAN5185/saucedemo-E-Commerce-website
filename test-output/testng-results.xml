@@ -1,21 +1,180 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="2" total="12" passed="10" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-04-03T21:35:30 IST" name="Default suite" finished-at="2025-04-03T21:35:37 IST" duration-ms="6528">
+  <suite started-at="2025-04-03T22:50:08 IST" name="Default suite" finished-at="2025-04-03T22:50:21 IST" duration-ms="12784">
     <groups>
+      <group name="regression">
+        <method signature="LoginPageTest.LogininVaildCrential(java.lang.String,java.lang.String)[pri:0, instance:testBase.LoginPageTest@27462a88]" name="LogininVaildCrential" class="testBase.LoginPageTest"/>
+      </group> <!-- regression -->
     </groups>
-    <test started-at="2025-04-03T21:35:30 IST" name="Default test" finished-at="2025-04-03T21:35:37 IST" duration-ms="6528">
+    <test started-at="2025-04-03T22:50:08 IST" name="Default test" finished-at="2025-04-03T22:50:21 IST" duration-ms="12784">
       <class name="testBase.LoginPageTest">
-        <test-method is-config="true" signature="openTheBrowser()[pri:0, instance:testBase.LoginPageTest@27462a88]" started-at="2025-04-03T21:35:30 IST" name="openTheBrowser" finished-at="2025-04-03T21:35:35 IST" duration-ms="5058" status="PASS">
+        <test-method is-config="true" signature="openTheBrowser()[pri:0, instance:testBase.LoginPageTest@27462a88]" started-at="2025-04-03T22:50:08 IST" name="openTheBrowser" finished-at="2025-04-03T22:50:13 IST" duration-ms="5068" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openTheBrowser -->
-        <test-method signature="Login()[pri:0, instance:testBase.LoginPageTest@27462a88]" started-at="2025-04-03T21:35:35 IST" name="Login" finished-at="2025-04-03T21:35:36 IST" duration-ms="947" status="PASS">
+        <test-method signature="LogininVaildCrential(java.lang.String,java.lang.String)[pri:0, instance:testBase.LoginPageTest@27462a88]" started-at="2025-04-03T22:50:13 IST" name="LogininVaildCrential" data-provider="userInvalidData" finished-at="2025-04-03T22:50:14 IST" duration-ms="898" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[invalid_user@xyz.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[secret_sauce]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method is-config="true" signature="teardowm()[pri:0, instance:testBase.LoginPageTest@27462a88]" started-at="2025-04-03T21:35:36 IST" name="teardowm" finished-at="2025-04-03T21:35:37 IST" duration-ms="342" status="PASS">
+        </test-method> <!-- LogininVaildCrential -->
+        <test-method signature="LogininVaildCrential(java.lang.String,java.lang.String)[pri:0, instance:testBase.LoginPageTest@27462a88]" started-at="2025-04-03T22:50:14 IST" name="LogininVaildCrential" data-provider="userInvalidData" finished-at="2025-04-03T22:50:15 IST" duration-ms="735" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[standard_user@example.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[wrong_password]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LogininVaildCrential -->
+        <test-method signature="LogininVaildCrential(java.lang.String,java.lang.String)[pri:0, instance:testBase.LoginPageTest@27462a88]" started-at="2025-04-03T22:50:15 IST" name="LogininVaildCrential" data-provider="userInvalidData" finished-at="2025-04-03T22:50:16 IST" duration-ms="728" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[locked_out_user@company.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[wrong_password]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LogininVaildCrential -->
+        <test-method signature="LogininVaildCrential(java.lang.String,java.lang.String)[pri:0, instance:testBase.LoginPageTest@27462a88]" started-at="2025-04-03T22:50:16 IST" name="LogininVaildCrential" data-provider="userInvalidData" finished-at="2025-04-03T22:50:16 IST" duration-ms="727" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[problem_user@domain.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[wrong_password]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LogininVaildCrential -->
+        <test-method signature="LogininVaildCrential(java.lang.String,java.lang.String)[pri:0, instance:testBase.LoginPageTest@27462a88]" started-at="2025-04-03T22:50:16 IST" name="LogininVaildCrential" data-provider="userInvalidData" finished-at="2025-04-03T22:50:17 IST" duration-ms="901" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[performance_glitch_user@service.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[wrong_password]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LogininVaildCrential -->
+        <test-method signature="LogininVaildCrential(java.lang.String,java.lang.String)[pri:0, instance:testBase.LoginPageTest@27462a88]" started-at="2025-04-03T22:50:17 IST" name="LogininVaildCrential" data-provider="userInvalidData" finished-at="2025-04-03T22:50:18 IST" duration-ms="744" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[error_user@platform.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[wrong_password]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LogininVaildCrential -->
+        <test-method signature="LogininVaildCrential(java.lang.String,java.lang.String)[pri:0, instance:testBase.LoginPageTest@27462a88]" started-at="2025-04-03T22:50:18 IST" name="LogininVaildCrential" data-provider="userInvalidData" finished-at="2025-04-03T22:50:19 IST" duration-ms="669" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[visual_user@domain.co]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[wrong_password]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LogininVaildCrential -->
+        <test-method signature="LogininVaildCrential(java.lang.String,java.lang.String)[pri:0, instance:testBase.LoginPageTest@27462a88]" started-at="2025-04-03T22:50:19 IST" name="LogininVaildCrential" data-provider="userInvalidData" finished-at="2025-04-03T22:50:19 IST" duration-ms="569" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[secret_sauce]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LogininVaildCrential -->
+        <test-method signature="LogininVaildCrential(java.lang.String,java.lang.String)[pri:0, instance:testBase.LoginPageTest@27462a88]" started-at="2025-04-03T22:50:19 IST" name="LogininVaildCrential" data-provider="userInvalidData" finished-at="2025-04-03T22:50:20 IST" duration-ms="610" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[standard_user@example.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LogininVaildCrential -->
+        <test-method signature="LogininVaildCrential(java.lang.String,java.lang.String)[pri:0, instance:testBase.LoginPageTest@27462a88]" started-at="2025-04-03T22:50:20 IST" name="LogininVaildCrential" data-provider="userInvalidData" finished-at="2025-04-03T22:50:20 IST" duration-ms="478" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LogininVaildCrential -->
+        <test-method is-config="true" signature="teardowm()[pri:0, instance:testBase.LoginPageTest@27462a88]" started-at="2025-04-03T22:50:20 IST" name="teardowm" finished-at="2025-04-03T22:50:21 IST" duration-ms="352" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardowm -->

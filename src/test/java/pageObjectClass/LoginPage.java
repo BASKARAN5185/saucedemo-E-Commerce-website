@@ -23,12 +23,14 @@ public class LoginPage extends baseClass {
 
 	// Enter the username into the field
 	public void enterTheUserName(String name) {
+		driver.findElement(userName).clear();
 		driver.findElement(userName).sendKeys(name);
 
 	}
 
 	// Enter the Password into the field
 	public void enterThePassword(String psw) {
+		driver.findElement(password).clear();
 		driver.findElement(password).sendKeys(psw);
 
 	}
