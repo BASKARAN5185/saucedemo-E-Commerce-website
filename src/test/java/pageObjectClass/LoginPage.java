@@ -3,14 +3,16 @@ package pageObjectClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import MyProject.saucedemo.baseClass;
+import MyProject.saucedemo.BaseClass;
 
-public class LoginPage extends baseClass {
+
+
+public class LoginPage extends BaseClass {
 
 	// Initialize RemoteWebDriver
 	public LoginPage(RemoteWebDriver driver) {
 
-		baseClass.driver = driver;
+		BaseClass.driver = driver;
 
 	}
 

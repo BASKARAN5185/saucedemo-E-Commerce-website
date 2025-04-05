@@ -2,15 +2,16 @@ package testBase;
 
 import org.testng.annotations.Test;
 
-import MyProject.saucedemo.baseClass;
+import MyProject.saucedemo.BaseClass;
 import pageObjectClass.LoginPage;
 import utility.TestDataProvider;
 
-public class LoginPageTest extends baseClass{
+public class LoginPageTest extends BaseClass{
 
 	LoginPage Login=new LoginPage(driver);
 	
-	@Test(enabled = false, groups ="smoke")
+	// Login Test
+	@Test(enabled = true, groups ="smoke")
 	void Login() {
 		Login.enterTheUserName("standard_user");
 		Login.enterThePassword("secret_sauce");
@@ -18,7 +19,7 @@ public class LoginPageTest extends baseClass{
 		
 	}
 	
-	
+	// Data Driven with Valid users login Test 
 	@Test(enabled = false,groups ="regression",dataProvider = "userData", dataProviderClass =TestDataProvider.class )
 	void LoginVaildCrential(String User,String Pass) {
 		Login.enterTheUserName(User);
@@ -27,8 +28,8 @@ public class LoginPageTest extends baseClass{
 		
 	}
 	
-
-	@Test(enabled=true,groups ="regression",dataProvider = "userInvalidData", dataProviderClass =TestDataProvider.class )
+	// Data Driven with inValid users login Test 
+	@Test(enabled=false,groups ="regression",dataProvider = "userInvalidData", dataProviderClass =TestDataProvider.class )
 	void LogininVaildCrential(String User,String Pass) {
 		Login.enterTheUserName(User);
 		Login.enterThePassword(Pass);
