@@ -49,6 +49,7 @@ Clone this repository to your local machine using Git:
 bash
 Copy
 git clone https://github.com/your-username/saucedemo-automation.git
+
 2. Install Required Dependencies
 Ensure you have Maven and Java installed on your machine. You can verify this by running the following commands:
 
@@ -70,6 +71,7 @@ Ensure that you have the appropriate browser drivers installed for the browsers 
 java
 Copy
 System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver");
+
 4. Running the Tests
 To run the tests, execute the following command:
 
