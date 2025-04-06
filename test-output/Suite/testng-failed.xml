@@ -5,12 +5,15 @@
     <classes>
       <class name="testBase.LandingPageTest">
         <methods>
-          <include name="CartIconIsVisible"/>
-          <include name="clickTheMenuverified"/>
+          <include name="clickTheAddToCart"/>
+          <include name="verifyMenuAllItemsClick"/>
+          <include name="verifyCartIconVisibility"/>
+          <include name="addToCartBadgevisible"/>
           <include name="openTheBrowser"/>
-          <include name="VerifytheHomePage"/>
           <include name="teardowm"/>
-          <include name="ProductTitleIsVisiable"/>
+          <include name="verifyMenuAbout"/>
+          <include name="verifyProductTitleVisibility"/>
+          <include name="verifyLogout"/>
         </methods>
       </class> <!-- testBase.LandingPageTest -->
     </classes>

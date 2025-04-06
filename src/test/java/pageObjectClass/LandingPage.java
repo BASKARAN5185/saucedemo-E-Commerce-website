@@ -3,6 +3,7 @@ package pageObjectClass;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Select;
@@ -20,7 +21,7 @@ public class LandingPage extends BaseClass {
 
 	// Landing Page Menu locators
 	By BurgerMenu = By.id("react-burger-menu-btn");
-	By MenuClose = By.id("react-burger-cross-btn");
+	By MenuClose = By.xpath("//div[@class='bm-cross-button']//button[1]");
 	By AllItem = By.id("inventory_sidebar_link");
 	By About = By.id("about_sidebar_link");
 	By ResetTheAppstore = By.id("reset_sidebar_link");
@@ -29,11 +30,14 @@ public class LandingPage extends BaseClass {
 	// Landing Page Header Locators
 	By PageTitle = By.className("app_logo");
 	By CartIcon = By.className("shopping_cart_link");
-	By product = By.className("title");
+	By product = By.cssSelector("span.title[data-test='title']");
 	By FilterDD = By.id("select");
 	By selectContainer = By.className("select_container");
 	By activeOption = By.className("active_option");
 	By productSortContainer = By.className("product_sort_container");
+	By Cartbage = By.className("shopping_cart_badge");
+	By ProducAddToCart = By.id("add-to-cart-sauce-labs-bike-light");
+	By ProductRemoveToCart = By.id("remove-sauce-labs-backpack");
 
 	// Action Method
 	// MenuIcon Clicked
@@ -44,7 +48,7 @@ public class LandingPage extends BaseClass {
 		return true;
 	}
 
-	// Clicked icon clicked and visibled 
+	// Clicked icon clicked and visibled
 	public boolean addToCartIconIsVisiable() {
 
 		WebElement cart = driver.findElement(CartIcon);
@@ -56,16 +60,21 @@ public class LandingPage extends BaseClass {
 	public boolean clickTheMenulogout() {
 
 		WebElement logout = driver.findElement(Logout);
-		logout.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", logout);
 		return true;
+		
 	}
 
 	// Menu Closed
 	public boolean clickTheMenuClose() {
 
-		WebElement Close = driver.findElement(MenuClose);
-		Close.click();
+		
+		WebElement closeButton = driver.findElement(MenuClose);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", closeButton);
 		return true;
+
 	}
 
 	// Menu AllItems
@@ -98,16 +107,26 @@ public class LandingPage extends BaseClass {
 		return Title.isDisplayed();
 	}
 
-	// Landing page  Title
+	// Landing page Badge
+	public boolean CartBadge() {
+		WebElement Badge = driver.findElement(Cartbage);
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		jsExecutor.executeScript("arguments[0].scrollIntoView(true);", Badge);
+		return Badge.isDisplayed();
+	}
+
+	// Landing page Title
 	public boolean ProductTitle() {
 		WebElement Title = driver.findElement(product);
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		jsExecutor.executeScript("arguments[0].scrollIntoView(true);", Title);
 		return Title.isDisplayed();
 	}
 
 	// Test: Sort by Name (A-Z)
 	public void testSortByNameAZ() {
 
-		// Locate the sorting dropdown and select "Name (A to Z)"
+		// Locate the sorting drop down and select "Name (A to Z)"
 		WebElement sortDropdown = driver.findElement(By.cssSelector(".product_sort_container"));
 		Select dropdown = new Select(sortDropdown);
 		dropdown.selectByVisibleText("Name (A to Z)");
@@ -130,6 +149,29 @@ public class LandingPage extends BaseClass {
 
 		// Assert the sorting is correct
 		Assert.assertTrue(isSorted, "Products are not sorted by name (A-Z).");
+	}
+
+	public boolean addToCart(String ProductName) {
+		WebElement AddToCart = driver.findElement(By.cssSelector("button[id*='add-to-cart-" + ProductName + "']"));
+		AddToCart.click();
+		return true;
+	}
+
+	public boolean AddToCartbuttonVisible(String ProductName) {
+		WebElement AddToCart = driver.findElement(By.cssSelector("button[id*='add-to-cart-" + ProductName + "']"));
+		return AddToCart.isDisplayed();
+	}
+
+	public boolean removeCart(String ProductName) {
+		WebElement AddToCartRemove = driver.findElement(By.id("remove-" + ProductName));
+		AddToCartRemove.click();
+		return true;
+
+	}
+
+	public boolean removeToCartbuttonVisible(String ProductName) {
+		WebElement AddToCart = driver.findElement(By.id("remove-" + ProductName));
+		return AddToCart.isDisplayed();
 	}
 
 	// Test: Sort by Name (Z-A)

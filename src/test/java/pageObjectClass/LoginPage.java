@@ -5,8 +5,6 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import MyProject.saucedemo.BaseClass;
 
-
-
 public class LoginPage extends BaseClass {
 
 	// Initialize RemoteWebDriver
